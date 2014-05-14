@@ -1,21 +1,25 @@
 #!/bin/bash
 
-#Script checks for authentication successes or fails for su, sudo or ssh.
+#By Sean McConnell
 
-#auth.log logs all authentication shit
+#Script checks for authentication successes or failures for su, sudo or ssh.
+
+#auth.log logs all authentication things.
 filepath=/var/log/auth.log
 
 echo "[-] Where is your log file? "
 read log_file
 while true; do
   echo ""; echo ""
-  echo "[-] What would you like to look for? "
-  echo "   [1] Failures to authenticate with SSH"
-  echo "   [2] Successes to authenticate with SSH"
-  echo "   [3] Failures to authenticate with sudo"
-  echo "   [4] Successes to authenticate with sudo"
-  echo "   [5] Failures to authenticate with su"
-  echo "   [6] Successes to authenticate with su "
+  echo "------------------------------------------------"
+  echo "|[-] What would you like to look for? 		|"
+  echo "|  [1] Failures to authenticate with SSH	|"
+  echo "|  [2] Successes to authenticate with SSH	|"
+  echo "|  [3] Failures to authenticate with sudo	|"
+  echo "|  [4] Successes to authenticate with sudo	|"
+  echo "|  [5] Failures to authenticate with su		|"
+  echo "|  [6] Successes to authenticate with su 	|"
+  echo "------------------------------------------------"
   read -a user_input
   
   if [[ $user_input == "1" ]]; then
